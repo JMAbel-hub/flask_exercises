@@ -1,0 +1,46 @@
+{% extends '_layout.html' %}
+
+{% block body %}
+    <style>
+        h1, form, p, hr{
+            margin-left: 250px;
+            margin-right: 250px;
+        }
+        hr.solid {
+            height: 3px;
+            background-color: black;
+            border: none;
+        }
+        hr.lightGrey {
+            height: 2px;
+            background-color: grey;
+            border: none;
+        } 
+        span{
+            display: inline-block;
+        } 
+    </style>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" href="/">Home </a>
+            <a class="nav-item nav-link active" href="/submit">Registered Students<span class="sr-only"></span></a>
+          </div>
+        </div>
+    </nav>
+    <h1 class="display-3">Registered Students</h1>
+    <p>The following students have registered for student organizations.</p>
+    <p style="display:inline">
+        <span><strong>Name</strong></span>
+        <span style="margin-left:500px;"><strong>Organization</strong></span>
+    </p>
+    <hr class = "solid">
+        {% for key in names_organizations %}
+            <p style="display:inline;">
+                <span>{{key}}</span>
+                <span style="margin-left:500px;">{{names_organizations[key]}}</span>
+            </p>
+            <hr class= "lightGrey">
+        {% endfor %}
+{% endblock %}
+ 

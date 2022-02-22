@@ -1,0 +1,33 @@
+{% extends '_layout.html' %}
+
+{% block body %}
+    <style>
+        h1, p, form{
+          margin-left: 250px;
+          margin-right: 250px;
+        }
+    </style>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="/">Home<span class="sr-only"></span></a>
+            <a class="nav-item nav-link" href="/submit">Registered Students</a>
+          </div>
+        </div>
+      </nav>
+    <h1 class="display-3">Register</h1>
+    <p>Use the Following form to register for a student organization</p> 
+    <form action="/submit" method="post"> 
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+        <label for="organization">Organization</label> 
+        <select name="organization" id="organization"> 
+            <option value="Charlotte Hack">Charlotte Hack</option>
+            <option value="49th Security Division">49th Security Division</option> 
+            <option value="Association for Computing Machinery - Women">Association for Computing Machinery - Women</option> 
+            <option value="Game Developers">Game Developers</option> 
+            <option value="Code9">Code9</option> 
+        </select> 
+            <button type="submit" class="btn btn-primary">Register</button> 
+        </form>
+{% endblock %}
